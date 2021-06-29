@@ -151,7 +151,7 @@ public class StudentDAOImpl implements StudentDAO {
 			return studentBean;
 		} catch (Exception e) {
 			e.printStackTrace();
-			throw new StudentException("Something Went Wrong!!!!!!!!!!!1");
+			throw new StudentException("Something Went Wrong!!!!!!!!!!!");
 		}
 	}
 

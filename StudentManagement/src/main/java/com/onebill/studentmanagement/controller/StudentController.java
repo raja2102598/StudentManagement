@@ -2,6 +2,7 @@ package com.onebill.studentmanagement.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,6 +39,7 @@ public class StudentController {
 	 * 
 	 * Body : { "email":"name@gmail.com", "marks":9.1, "name":"name", "grade":"A+" }
 	 */
+	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping(path = "/addStudent", produces = { MediaType.APPLICATION_XML_VALUE,
 			MediaType.APPLICATION_JSON_VALUE }, consumes = { MediaType.APPLICATION_XML_VALUE,
 					MediaType.APPLICATION_JSON_VALUE })
@@ -66,6 +68,7 @@ public class StudentController {
 	 * 
 	 * URL : localhost:8080/StudentManagement/getStudent/2
 	 */
+	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping(path = "/getStudent/{id}", produces = { MediaType.APPLICATION_XML_VALUE,
 			MediaType.APPLICATION_JSON_VALUE })
 	public StudentResponse getStudent(@PathVariable(name = "id") int id) {
@@ -95,6 +98,7 @@ public class StudentController {
 	 * URL : localhost:8080/StudentManagement/removeStudent/2
 	 */
 
+	@CrossOrigin(origins = "http://localhost:3000")
 	@DeleteMapping(path = "/removeStudent/{id}", produces = { MediaType.APPLICATION_XML_VALUE,
 			MediaType.APPLICATION_JSON_VALUE })
 	public StudentResponse removeStudent(@PathVariable(name = "id") int id) {
@@ -124,6 +128,7 @@ public class StudentController {
 	 * 
 	 * Body : { "userid":1, "email":"name@gmail.com" }
 	 */
+	@CrossOrigin(origins = "http://localhost:3000")
 	@PutMapping(path = "/updateStudentEmail", produces = { MediaType.APPLICATION_XML_VALUE,
 			MediaType.APPLICATION_JSON_VALUE }, consumes = { MediaType.APPLICATION_XML_VALUE,
 					MediaType.APPLICATION_JSON_VALUE })
@@ -161,7 +166,9 @@ public class StudentController {
 	 * 
 	 * Body : { "userid":2, "email":"name@gmail.com", "name":"name" }
 	 *   
+	 *   
 	 */
+	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping(path = "/marks/{q1mark}/{q2mark}/{q3mark}/{q4mark}/", produces = { MediaType.APPLICATION_XML_VALUE,
 			MediaType.APPLICATION_JSON_VALUE }, consumes = { MediaType.APPLICATION_XML_VALUE,
 					MediaType.APPLICATION_JSON_VALUE })
